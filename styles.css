@@ -1,0 +1,784 @@
+/* === RESETEO GENERAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d1117;
+  color: #eaeaea;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* === HEADER === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+header.scrolled {
+  background: rgba(13, 17, 23, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  padding: 15px 8%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+.logo span {
+  color: #00aaff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+nav ul li a {
+  color: #eaeaea;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #00aaff;
+  transition: width 0.3s ease;
+}
+nav ul li a:hover {
+  color: #00aaff;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 30%, #0d1117, #090c10 60%, #050608 100%);
+  color: #fff;
+  padding: 6rem 2rem 4rem;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero .name {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #cfd8e3;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+
+/* === EFECTO DE ESCRITURA === */
+.typing-text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-right: 3px solid #00c6ff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(22) 0.8s forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 17ch; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* === REDES SOCIALES === */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+}
+.social-btn img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+}
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+}
+.social-btn.github:hover { background: #24292f; }
+.social-btn.linkedin:hover { background: #0077B5; }
+.social-btn.instagram:hover {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+.social-btn.whatsapp:hover {
+  background: linear-gradient(45deg, #25D366, #128C7E);
+}
+
+/* === SOBRE MÍ === */
+.about {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about h2 {
+  font-size: 2rem;
+  color: #00bfff;
+  margin-bottom: 2rem;
+}
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.about-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #00bfff;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 191, 255, 0.5);
+}
+.about-text p {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    text-align: left;
+  }
+  .about-img {
+    margin-right: 2rem;
+  }
+}
+
+/* === PROYECTOS === */
+#projects {
+  padding: 80px 0;
+  text-align: center;
+}
+#projects h2 {
+  font-size: 2rem;
+  color: #00bfff;
+  margin-bottom: 3rem;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+.project-card {
+  background-color: #11161c;
+  border: 1px solid #1e2731;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  max-width: 360px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
+  border-color: #00bfff;
+}
+.project-card h3 {
+  color: #00bfff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+.project-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid #00bfff;
+  border-radius: 8px;
+  color: #00bfff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.project-link:hover {
+  background-color: #00bfff;
+  color: #0d1117;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+/* === CONTACTO === */
+.contact-section {
+  background: linear-gradient(160deg, #0f141b, #121820, #0a0e13);
+  text-align: center;
+  padding: 120px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #00bfff;
+  margin-bottom: 1.5rem;
+}
+.contact-text {
+  color: #cfcfcf;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.contact-card {
+  background: rgba(255, 255, 255, 0.03);
+  display: inline-block;
+  padding: 40px 60px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.15);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 191, 255, 0.2);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 191, 255, 0.25);
+  border-color: #00bfff;
+}
+
+/* === FOOTER === */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #15181d;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2.5rem auto 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 191, 255, 0.25);
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 8px #00bfff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 0.9rem 2rem;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px #00bfff;
+}
+
+/* === 📱 OPTIMIZACIÓN MOBILE === */
+@media (max-width: 768px) {
+
+  /* --- Header --- */
+  header {
+    padding: 14px 5%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    min-height: 80vh;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .typing-text {
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social-btn {
+    width: 80%;
+    justify-content: center;
+  }
+
+  /* --- Sección "Sobre mí" --- */
+  .about-content {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  /* --- Proyectos --- */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  /* --- Contacto --- */
+  .contact-section {
+    padding: 70px 1.5rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form form {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 25px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* === 📱 Ultra small screens (<=480px) === */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .typing-text {
+    font-size: 1rem;
+  }
+
+  .about h2, .projects h2, .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+
+  .social-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* === 💡 FIX HEADER MOBILE === */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0d1117; /* mismo color que el body para que no se note el corte */
+    padding: 12px 0 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #00b4ff;
+  }
+}
+
+/* === 💡 Arreglo del salto negro entre secciones === */
+section {
+  background-color: transparent;
+}
+
+/* === FIX: header fijo y espacio correcto === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #0d1117;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 0;
+}
+
+/* Crea espacio automático debajo del header */
+body {
+  padding-top: 85px; /* ajusta según la altura real del header */
+}
+
+/* Evita que al hacer clic en los enlaces se tape el título */
+html {
+  scroll-padding-top: 90px;
+}
+
+/* --- Versión mobile --- */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  body {
+    padding-top: 95px; /* un poco más porque el menú puede ocupar más espacio */
+  }
+
+  .hero {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    background-color: #00b4ff;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .hero a:hover {
+    background-color: #0095d9;
+    transform: scale(1.05);
+  }
+}
+
+/* === CORRECCIÓN GENERAL DE CENTRADO Y ESPACIADOS === */
+
+/* --- Ajuste global de secciones --- */
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- HERO centrado correctamente --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 140px 20px 60px; /* para que el header no tape nada */
+  background: linear-gradient(180deg, #0a0a0a, #111);
+}
+
+.hero h1, 
+.hero h2, 
+.hero p {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero .btn {
+  margin-top: 1.8rem;
+}
+
+/* --- SOBRE MÍ --- */
+.about {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 700px;
+  text-align: center;
+}
+
+.about-img {
+  display: block;
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00c6ff;
+  box-shadow: 0 0 25px rgba(0,198,255,0.3);
+}
+
+/* --- PROYECTOS --- */
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 2rem;
+}
+
+.project-card {
+  text-align: center;
+}
+
+/* --- BOTONES Y LINKS --- */
+.btn, .project-link, .social-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- REDES SOCIALES --- */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  text-align: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* --- CONTACTO --- */
+.contact-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card {
+  margin: 0 auto;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form form {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* --- FOOTER --- */
+.footer {
+  text-align: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    flex-direction: column;
+  }
+
+  .contact-form form {
+    padding: 25px;
+  }
+}
