@@ -5,40 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agustín Merlo | Desarrollador Full Stack</title>
 
-    <!-- Fuente -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Librería AOS (animaciones al hacer scroll) -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <!-- Archivo CSS -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 </head>
 <body>
 
 
-    <!-- ===== HEADER FIJO ===== -->
-<header>
-<div class="logo">Agustín<span>Dev</span></div>
-<nav>
-    <ul>
-    <li><a href="#home">Inicio</a></li>
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#contact">Contacto</a></li>
-    </ul>
-</nav>
+    <header>
+    <div class="logo">Digital<span>Forge</span></div>
+    <nav>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+    <button id="theme-toggle" aria-label="Cambiar tema">
+        <span class="icon-moon">🌙</span>
+    </button>
 </header>
 
     <section id="hero" class="hero">
     <div class="container hero-container">
     <div class="hero-text" data-aos="fade-right">
-        <h2>Desarrollo experiencias web modernas y funcionales.</h2>
+        <h1 class="hero-title">Desarrollo experiencias web modernas y funcionales.</h1>
         <p>Soy desarrollador full stack en formación, enfocado en construir interfaces limpias, rápidas y con buena experiencia de usuario.</p>
         <a href="#projects" class="btn">Ver proyectos</a>
     </div>
@@ -51,8 +46,8 @@
     <section class="about" id="about">
 <h2>Sobre mí</h2>
 <div class="about-content">
-    <img src="img/agustin.jpeg" alt="Foto de Agustín" class="about-img">
-    <div class="about-text">
+    <img src="img/agustin.jpeg" alt="Foto de Agustín" class="about-img" data-aos="fade-right">
+    <div class="about-text" data-aos="fade-left">
     <p>👋 ¡Hola! Soy <strong>Agustín Merlo</strong>, desarrollador <strong>Full Stack</strong> en formación con gran pasión por el diseño web moderno y las interfaces limpias. Disfruto combinar lógica y creatividad para crear experiencias digitales funcionales, rápidas y visualmente atractivas.</p>
     <p>💻 Tengo experiencia en <strong>HTML, CSS, SASS, JavaScript y Bootstrap</strong> en la parte Front-End, y actualmente estoy profundizando en <strong>Node.js, Express y bases de datos</strong> para completar mi perfil Back-End.</p>
     <p>🚀 Mi objetivo es seguir creciendo como desarrollador, trabajar en proyectos reales y construir productos digitales que generen impacto positivo.</p>
@@ -60,32 +55,84 @@
 </div>
 </section>
 
-
-<section id="projects">
-<h2>Proyectos Destacados</h2>
-
-<div class="project-grid">
-    <div class="project-card">
-    <h3>Coffee Break - Pedido en Línea</h3>
-    <p>Tienda online de café. Diseño responsive, estructura semántica y animaciones suaves. Creado con HTML, CSS y JS.</p>
-    <a href="https://agusmerlo2005.github.io/Entrega-Final-JavaScript/" target="_blank" class="project-link">🌐 Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-    <h3>IphoneArms</h3>
-    <p>E-commerce moderno inspirado en Apple. Maquetado con Bootstrap y enfoque mobile-first.</p>
-    <a href="https://agusmerlo2005.github.io/Prueba-IphoneArms/" target="_blank" class="project-link">🌐 Ver proyecto</a>
-    </div>
-
-    <div class="project-card">
-    <h3>MUSKA | home & deco</h3>
-    <p>Proyecto final: sitio completo con SASS, Grid, Flexbox, animaciones y diseño elegante. Publicado con hosting externo.</p>
-    <a href="https://muska-home-y-deco.vercel.app/" target="_blank" class="project-link">🌐 Ver proyecto</a>
-    </div>
-</div>
+<section id="skills" class="skills">
+    <h2>Mi Stack Tecnológico</h2>
+    <div class="skills-grid" data-aos="fade-up">
+        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+            <p>HTML5</p>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+            <p>CSS3</p>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <p>JavaScript</p>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS">
+            <p>SASS</p>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+            <p>Node.js</p>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express">
+            <p>Express</p>
+        </div>
+        </div>
 </section>
 
+<section id="projects">
+    <h2>Proyectos Destacados</h2>
 
+    <div class="project-grid">
+        <div class="project-card" data-aos="fade-up">
+            <h3>Coffee Break - Pedido en Línea</h3>
+            <div class="tech-badges">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+            </div>
+            <p>Tienda online de café. Diseño responsive, estructura semántica y animaciones suaves. Creado con HTML, CSS y JS.</p>
+            <div class="project-links-group">
+                <a href="https://github.com/agusmerlo2005/Entrega-Final-JavaScript.git" target="_blank" class="project-link github-link">💻 Código</a>
+                <a href="https://agusmerlo2005.github.io/Entrega-Final-JavaScript/" target="_blank" class="project-link">🌐 Ver sitio</a>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <h3>IphoneArms</h3>
+            <div class="tech-badges">
+                <span>HTML5</span>
+                <span>SASS</span>
+                <span>Bootstrap</span>
+            </div>
+            <p>E-commerce moderno inspirado en Apple. Maquetado con Bootstrap y enfoque mobile-first.</p>
+            <div class="project-links-group">
+                <a href="https://github.com/agusmerlo2005/Prueba-IphoneArms.git" target="_blank" class="project-link github-link">💻 Código</a>
+                <a href="https://agusmerlo2005.github.io/Prueba-IphoneArms/" target="_blank" class="project-link">🌐 Ver sitio</a>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <h3>MUSKA | home & deco</h3>
+            <div class="tech-badges">
+                <span>SASS</span>
+                <span>Flexbox</span>
+                <span>Grid</span>
+                <span>Vercel</span>
+            </div>
+            <p>Proyecto final: sitio completo con SASS, Grid, Flexbox, animaciones y diseño elegante. Publicado con hosting externo.</p>
+            <div class="project-links-group">
+                <a href="https://github.com/agusmerlo2005/muska-home-y-deco.git" target="_blank" class="project-link github-link">💻 Código</a>
+                <a href="https://muska-home-y-deco.vercel.app/" target="_blank" class="project-link">🌐 Ver sitio</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <section id="contact" class="section contact-section">
@@ -112,16 +159,14 @@
 </div>
 
 
-<!-- Formulario de contacto -->
-<div class="contact-form" data-aos="fade-up" data-aos-delay="100">
+<div class="contact-form-container" data-aos="fade-up" data-aos-delay="100">
 <form class="contact-form" action="https://formspree.io/f/xjkpqqdz" method="POST">
 <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portfolio 💻">
-<input type="text" placeholder="Tu nombre" required>
-<input type="email" placeholder="Tu correo" required>
-<textarea placeholder="Tu mensaje..." rows="5" required></textarea>
+<input type="text" placeholder="Tu nombre" name="nombre" required>
+<input type="email" placeholder="Tu correo" name="_replyto" required>
+<textarea placeholder="Tu mensaje..." rows="5" name="mensaje" required></textarea>
 <button type="submit">Enviar mensaje</button>
 </form>
-
 </div>
 
 
@@ -131,7 +176,7 @@
     <footer class="footer">
     <p>© 2025 Agustín Merlo | Desarrollador Web</p>
 
-    <div class="social-links">
+    <div class="social-links footer-links">
 <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
     <span>@tuusuario</span>
@@ -147,59 +192,92 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
     AOS.init({
-        duration: 1000,
+        duration: 800, // Un poco más rápido
         once: true
     });
     </script>
 
-<!-- Notificación visual -->
 <div class="notification" id="notification"></div>
-
 <script>
-const form = document.querySelector(".contact-form form");
+const form = document.querySelector(".contact-form"); // Seleccionamos la clase contact-form
 const notification = document.getElementById("notification");
 
 form.addEventListener("submit", async (e) => {
-e.preventDefault();
-const data = new FormData(form);
-const response = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { Accept: "application/json" },
-});
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { Accept: "application/json" },
+    });
 
-if (response.ok) {
-    showNotification("✅ Mensaje enviado correctamente", "success");
-    form.reset();
-} else {
-    showNotification("❌ Hubo un error al enviar el mensaje", "error");
-}
+    if (response.ok) {
+        showNotification("✅ Mensaje enviado correctamente", "success");
+        form.reset();
+    } else {
+        showNotification("❌ Hubo un error al enviar el mensaje", "error");
+    }
 });
 
 function showNotification(message, type) {
-notification.textContent = message;
-notification.className = `notification ${type}`;
-notification.style.top = "30px";
+    notification.textContent = message;
+    notification.className = `notification ${type}`;
+    notification.style.top = "30px";
 
-setTimeout(() => {
-    notification.style.top = "-80px";
-}, 3000);
+    setTimeout(() => {
+        notification.style.top = "-80px";
+    }, 3000);
 }
 
 // === Header scroll effect ===
 window.addEventListener("scroll", () => {
-const header = document.querySelector("header");
-if (window.scrollY > 80) {
-    header.classList.add("scrolled");
-} else {
-    header.classList.remove("scrolled");
-}
+    const header = document.querySelector("header");
+    // Usamos el padding-top del body como referencia
+    if (window.scrollY > 50) { 
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
 });
+
+/* === LÓGICA DEL DARK/LIGHT MODE === */
+const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// 1. Cargar la configuración guardada o por defecto (dark)
+function loadTheme() {
+    // Revisa si hay un tema guardado, si no, usa 'dark' como default
+    const savedTheme = localStorage.getItem('theme') || 'dark'; 
+    body.setAttribute('data-theme', savedTheme);
+
+    // Actualiza el ícono
+    updateToggleButton(savedTheme);
+}
+
+// 2. Función para cambiar el ícono
+function updateToggleButton(theme) {
+    if (theme === 'light') {
+        toggleButton.querySelector('span').textContent = '☀️';
+    } else {
+        toggleButton.querySelector('span').textContent = '🌙';
+    }
+}
+
+// 3. Función principal para alternar el tema
+function toggleTheme() {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); // Guarda la preferencia
+    updateToggleButton(newTheme);
+}
+
+// 4. Listeners y ejecución inicial
+loadTheme(); // Ejecuta al cargar para aplicar el tema guardado
+toggleButton.addEventListener('click', toggleTheme);
+// --- FIN DE LA LÓGICA DEL DARK/LIGHT MODE ---
 </script>
-
-
-
-
 
 </body>
 </html>
