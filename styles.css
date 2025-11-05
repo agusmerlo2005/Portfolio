@@ -175,10 +175,11 @@ header.scrolled {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #fff;
+    /* Antes: color: #fff; */
+    color: var(--text-light); /* <--- CAMBIO CLAVE: Usar la variable */
 }
 .logo span {
-    color: var(--accent-color); /* Usando variable */
+    color: var(--accent-color); 
 }
 
 nav ul {
@@ -187,11 +188,10 @@ nav ul {
     gap: 30px;
 }
 nav ul li a {
-    color: var(--text-light);
+    /* Antes: color: #eaeaea; */
+    color: var(--text-light); /* <--- CAMBIO CLAVE: Usar la variable */
     text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    transition: color 0.3s ease;
+    /* ... */
 }
 nav ul li a::after {
     content: "";
@@ -334,10 +334,11 @@ nav ul li a:hover::after {
     max-width: 700px;
 }
 .about-text p {
-    color: #ccc;
+    /* Antes: color: #ccc; */
+    color: var(--text-light); /* <--- CAMBIO CLAVE: Usamos la variable para el texto del párrafo */
     line-height: 1.7;
     font-size: 1.05rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Aseguramos espacio entre párrafos */
 }
 
 @media (min-width: 768px) {
